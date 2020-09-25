@@ -2,10 +2,11 @@ using System;
 
 namespace chunliu.demo
 {
+    // Based on https://blog.twitter.com/engineering/en_us/a/2010/announcing-snowflake.html
     public class SnowflakeIdWorker
     {
-        // Anchor timestamp (2015-01-01)
-        private const long twepoch = 1420041600000L;
+        // Anchor timestamp (2020-09-01)
+        private const long twepoch = 1598918400000L;
         // Bits for worker id
         private const int workerIdBits = 5;
         // Bits for data center id
