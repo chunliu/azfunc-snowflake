@@ -11,9 +11,9 @@ namespace chunliu.demo
         private const int workerIdBits = 5;
         // Bits for data center id
         private const int datacenterIdBits = 5;
-        // Max id of worker, 31
+        // Max id of worker, 31 (0b11111)
         private long maxWorkerId = -1 ^ (-1 << workerIdBits);
-        // Max id of data center, 31
+        // Max id of data center, 31 (0b11111)
         private long maxDatacenterId = -1 ^ (-1 << datacenterIdBits);
         // Bits for the sequence number
         private const int sequenceBits = 12;
