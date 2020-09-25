@@ -48,10 +48,7 @@ namespace chunliu.demo
                 if (entity == null)
                 {
                     var records = workerIds.ExecuteQuery(new TableQuery<WorkerIdEntity>()).ToList().Count;
-                    if (records > 0)
-                    {
-                        workerId = records - 1;
-                    }
+                    workerId = records;
                     WorkerIdEntity newEntity = new WorkerIdEntity(partitionKey, instanceId);
                     newEntity.WorkerId = workerId;
                     TableOperation insert = TableOperation.InsertOrReplace(newEntity);
