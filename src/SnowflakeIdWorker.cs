@@ -59,7 +59,7 @@ namespace chunliu.demo
                 if (sequence == 0) 
                 {
                     // If the sequence is over the max, wait till next millis
-                    timestamp = tillNextMillis(lastTimestamp);
+                    timestamp = TillNextMillis(lastTimestamp);
                 }
             }
             else
@@ -75,7 +75,7 @@ namespace chunliu.demo
                 | sequence;
         }
 
-        protected long tillNextMillis(long timestamp)
+        private long TillNextMillis(long timestamp)
         {
             long nextTimestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             while (nextTimestamp <= timestamp)
