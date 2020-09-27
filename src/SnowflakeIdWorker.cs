@@ -2,8 +2,14 @@ using System;
 
 namespace chunliu.demo
 {
+    public interface ISnowflakeIdWorker
+    {
+        long NextId();
+        long WorkerId {get;}
+        long DatacenterId {get;}
+    }
     // Based on https://blog.twitter.com/engineering/en_us/a/2010/announcing-snowflake.html
-    public class SnowflakeIdWorker
+    public class SnowflakeIdWorker : ISnowflakeIdWorker
     {
         // Anchor timestamp (2020-09-01)
         private const long twepoch = 1598918400000L;
@@ -29,6 +35,15 @@ namespace chunliu.demo
         private long datacenterId;
         private long sequence = 0;
         private long lastTimestamp = -1;
+
+        public long WorkerId
+        {
+            get => this.workerId;
+        }
+        public long DatacenterId
+        {
+            get => this.datacenterId;
+        }
 
         public SnowflakeIdWorker(int workerId, int datacenterId)
         {
