@@ -53,7 +53,7 @@ namespace chunliu.demo
             }
             if (datacenterId > maxDatacenterId || datacenterId < 0)
             {
-                throw new ArgumentException($"Data center Id can't be greater than {datacenterId} or less than 0");
+                throw new ArgumentException($"Data center Id can't be greater than {maxDatacenterId} or less than 0");
             }
             this.workerId = workerId;
             this.datacenterId = datacenterId;
